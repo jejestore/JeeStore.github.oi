@@ -6,6 +6,7 @@
     <title>jee store</title>
     <link rel="icon" href="bigo_live.jpg">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <header>
@@ -17,25 +18,43 @@
                 <li> <a href="#home">BERANDA </a></li>
                 <li> <a href="#populer">PRODUK</a></li>
                 <li> <a href="#tentang">TENTANG</a></li>
-                <li> <a href="#">KONTAK</a></li>
+                <li> <a href="#sosmed">KONTAK</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="home" class="slider">
-        <h4>Klik Disini Untuk Slide Gambar</h4>
-        <input type="radio" name="choose" id="" class="choose_1">
-        <input type="radio" name="choose" id="" class="choose_2">
-        <div class="slides">
-            <a href="https://www.tiktok.com/@jeebel_?_t=8jIbMcrSPnF&_r=1" target="_blank" rel="noopener noreferrer" class="slide s1">
-                <img src="slide-1.jpg" alt="">
-            </a>
-            <a href="https://wa.me/6285706330646" target="_blank" rel="noopener noreferrer" class="slide">
-                <img src="slide-2.jpg" alt="">
-            </a>
-        </div>
+   <div id="home" class="slider">
+    <div class="slides">
+        <a href="https://www.tiktok.com/@jeebel_?_t=8jIbMcrSPnF&_r=1" target="_blank" rel="noopener noreferrer" class="slide s1 active">
+            <img src="slide-1.jpg" alt="">
+        </a>
+        <a href="https://wa.me/6285706330646" target="_blank" rel="noopener noreferrer" class="slide">
+            <img src="slide-2.jpg" alt="">
+        </a>
     </div>
+</div>
 
+<script>
+    $(document).ready(function () {
+        var currentIndex = 0;
+        var slides = $('.slide');
+        var totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.removeClass('active');
+            slides.eq(index).addClass('active');
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        // Ganti slide setiap 1 detik
+        setInterval(nextSlide, 1000);
+    });
+</script>
+   
 <h1 class="title-p">POPULER</h1>
     <section id="populer" class="populer">
         <div class="ff">
@@ -421,6 +440,40 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <h1 class="title-p">STRIMING APP</h1>
+    <section id="populer" class="populer">
+        <div class="ff">
+            <div class="link">
+                <a href="">
+                        <img src="NimoTV.png" alt="">
+                        <div class="judul-produk">NimoTV</div>
+                </a>
+            </div>
+         </div>
+    </div>
+
+        <div class="mlbb">  
+            <div class="link">
+                <a href="">
+                        <img src="vidio.png" alt="">
+                        <div class="judul-produk">video</div>
+                </a>
+            </div>
+            </div>
+        </div>
+
+        <div class="mlbb">  
+            <div class="link">
+                <a href="">
+                        <img src="viu.jpg" alt="">
+                        <div class="judul-produk">video</div>
+                </a>
+            </div>
+            </div>
+        </div>
+
     </section>
 
     <section class="tentang" id="tentang">
