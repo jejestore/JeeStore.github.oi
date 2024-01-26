@@ -284,11 +284,11 @@ footer
     padding: 10px;
 }
 
-@media  screen and(max-width: 600px){
-
+@media screen and (max-width: 600px ){
+    
     nav ul li a
     {
-        font-size: 11pt;
+        font-size: 12pt;
     }
 
     .slider
@@ -298,13 +298,14 @@ footer
 
     .title-p
     {
-        padding-top: 2rem;
+        padding-top: 6rem;
+        margin-left: 20px;
     }
 
     .populer
     {
         display: grid;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(3,1fr);
         font-size: 5pt;
     }
 
@@ -330,4 +331,12 @@ footer
     {
         width: 10%;
     }
+
+}
+.slide {
+    display: none;
+}
+
+.active {
+    display: block;
 }
